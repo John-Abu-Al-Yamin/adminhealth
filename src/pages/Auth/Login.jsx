@@ -6,26 +6,14 @@ import { Mail, Lock, ArrowRight, Eye, EyeClosed, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "@/context/AuthContext";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { loginValidationSchema } from "@/utils/validation";
 
 const Login = () => {
-  const { login, loading, setLoading } = useAuthContext();
+  const { login, loading } = useAuthContext();
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [formdata, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const navgite = useNavigate();
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-  
 
   return (
     <div className="flex justify-center items-center min-h-screen">

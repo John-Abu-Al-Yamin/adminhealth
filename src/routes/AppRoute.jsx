@@ -15,7 +15,6 @@ const AppRoute = () => {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/admin-login" element={<Login />} />
       </Route>
-
       {/* الطرق المحمية */}
       <Route element={<ProtectedRoute />}>
         <Route path="/doctor" element={<HomeDoctor />} />
